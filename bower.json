@@ -1,0 +1,17 @@
+{
+  "name": "kurento-module-chroma",
+  "description": "Chroma Detector Filter",
+  "license": "LGPL",
+  "keywords": [
+    "Kurento"
+  ],
+  "homepage": "http://www.kurento.com",
+  "repository": {
+    "type": "git",
+    "url": "Kurento/kurento-module-chroma-js"
+  },
+  "authors": [
+    "Kurento <info@kurento.com> (http://kurento.org)"
+  ],
+  "main": "js/kurento-module-chroma.js"
+}
