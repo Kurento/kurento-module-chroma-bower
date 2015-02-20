@@ -128,7 +128,7 @@ ChromaFilter.constructorParams = {
 /**
  * @alias module:chroma.ChromaFilter.events
  *
- * @extend module:core/abstracts.Filter.events
+ * @extends module:core/abstracts.Filter.events
  */
 ChromaFilter.events = Filter.events;
 
