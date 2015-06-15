@@ -4,16 +4,15 @@ require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof requ
 /*
  * (C) Copyright 2013-2015 Kurento (http://kurento.org/)
  *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the GNU Lesser General Public License
- * (LGPL) version 2.1 which accompanies this distribution, and is available at
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the GNU Lesser General Public License (LGPL)
+ * version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
  */
 
 var inherits = require('inherits');
@@ -55,14 +54,12 @@ inherits(ChromaFilter, Filter);
 // Public methods
 //
 
-
 /**
  * Sets the image to show on the detected chroma surface.
  *
  * @alias module:chroma.ChromaFilter.setBackground
  *
- * @param   {external:String} uri
-
+ * @param {external:String} uri
  *  URI where the image is located
  *
  * @param {module:chroma.ChromaFilter~setBackgroundCallback} [callback]
@@ -74,12 +71,13 @@ ChromaFilter.prototype.setBackground = function(uri, callback){
                   ? Array.prototype.shift.apply(arguments)
                   : undefined;
 
-  checkType('String', 'uri', uri, {required: true}
-);
+  checkType('String', 'uri', uri, {required: true});
 
   var params = {
-    uri: uri,
+    uri: uri
   };
+
+  callback = (callback || noop).bind(this)
 
   return this._invoke(transaction, 'setBackground', params, callback);
 };
@@ -104,6 +102,8 @@ ChromaFilter.prototype.unsetBackground = function(callback){
 
   if(!arguments.length) callback = undefined;
 
+  callback = (callback || noop).bind(this)
+
   return this._invoke(transaction, 'unsetBackground', callback);
 };
 /**
@@ -115,17 +115,14 @@ ChromaFilter.prototype.unsetBackground = function(callback){
 /**
  * @alias module:chroma.ChromaFilter.constructorParams
  *
- * @property   {external:String} [backgroundImage]
-
+ * @property {external:String} [backgroundImage]
  *  url of image to be used to replace the detected background
  *
- * @property   {module:core.MediaPipeline} mediaPipeline
-
+ * @property {module:core.MediaPipeline} mediaPipeline
  *  the {@link module:core.MediaPipeline MediaPipeline} to which the filter 
  *  belongs
  *
- * @property   {module:chroma/complexTypes.WindowParam} window
-
+ * @property {module:chroma/complexTypes.WindowParam} window
  *  Window of replacement for the {@link module:chroma.ChromaFilter 
  *  ChromaFilter}
  */
@@ -139,7 +136,7 @@ ChromaFilter.constructorParams = {
   window: {
     type: 'WindowParam',
     required: true
-  },
+  }
 };
 
 /**
@@ -182,16 +179,15 @@ require('.');
 /*
  * (C) Copyright 2013-2015 Kurento (http://kurento.org/)
  *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the GNU Lesser General Public License
- * (LGPL) version 2.1 which accompanies this distribution, and is available at
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the GNU Lesser General Public License (LGPL)
+ * version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
  */
 
 var inherits = require('inherits');
@@ -225,14 +221,10 @@ function WindowParam(windowParamDict){
     return new WindowParam(windowParamDict)
 
   // Check windowParamDict has the required fields
-  checkType('int', 'windowParamDict.topRightCornerX', windowParamDict.topRightCornerX, {required: true}
-);
-  checkType('int', 'windowParamDict.topRightCornerY', windowParamDict.topRightCornerY, {required: true}
-);
-  checkType('int', 'windowParamDict.width', windowParamDict.width, {required: true}
-);
-  checkType('int', 'windowParamDict.height', windowParamDict.height, {required: true}
-);
+  checkType('int', 'windowParamDict.topRightCornerX', windowParamDict.topRightCornerX, {required: true});
+  checkType('int', 'windowParamDict.topRightCornerY', windowParamDict.topRightCornerY, {required: true});
+  checkType('int', 'windowParamDict.width', windowParamDict.width, {required: true});
+  checkType('int', 'windowParamDict.height', windowParamDict.height, {required: true});
 
   // Init parent class
   WindowParam.super_.call(this, windowParamDict)
@@ -301,16 +293,15 @@ WindowParam.check = checkWindowParam;
 /*
  * (C) Copyright 2013-2015 Kurento (http://kurento.org/)
  *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the GNU Lesser General Public License
- * (LGPL) version 2.1 which accompanies this distribution, and is available at
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the GNU Lesser General Public License (LGPL)
+ * version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
  */
 
 /**
@@ -333,16 +324,15 @@ exports.WindowParam = WindowParam;
 /*
  * (C) Copyright 2013-2015 Kurento (http://kurento.org/)
  *
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the GNU Lesser General Public License
- * (LGPL) version 2.1 which accompanies this distribution, and is available at
+ * All rights reserved. This program and the accompanying materials are made
+ * available under the terms of the GNU Lesser General Public License (LGPL)
+ * version 2.1 which accompanies this distribution, and is available at
  * http://www.gnu.org/licenses/lgpl-2.1.html
  *
- * This library is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
- * Lesser General Public License for more details.
- *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
  */
 
 /**
