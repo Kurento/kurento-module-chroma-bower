@@ -19,8 +19,11 @@ var inherits = require('inherits');
 
 var kurentoClient = require('kurento-client');
 
+var disguise = kurentoClient.disguise;
+
 var checkType      = kurentoClient.checkType;
 var ChecktypeError = checkType.ChecktypeError;
+
 
 var Transaction = kurentoClient.TransactionsManager.Transaction;
 
@@ -81,7 +84,7 @@ ChromaFilter.prototype.setBackground = function(uri, callback){
 
   callback = (callback || noop).bind(this)
 
-  return this._invoke(transaction, 'setBackground', params, callback);
+  return disguise(this._invoke(transaction, 'setBackground', params, callback), this)
 };
 /**
  * @callback module:chroma.ChromaFilter~setBackgroundCallback
@@ -106,7 +109,7 @@ ChromaFilter.prototype.unsetBackground = function(callback){
 
   callback = (callback || noop).bind(this)
 
-  return this._invoke(transaction, 'unsetBackground', callback);
+  return disguise(this._invoke(transaction, 'unsetBackground', callback), this)
 };
 /**
  * @callback module:chroma.ChromaFilter~unsetBackgroundCallback
