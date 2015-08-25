@@ -153,7 +153,7 @@ ChromaFilter.events = Filter.events;
 
 
 /**
- * Checker for {@link chroma.ChromaFilter}
+ * Checker for {@link module:chroma.ChromaFilter}
  *
  * @memberof module:chroma
  *
@@ -276,7 +276,7 @@ Object.defineProperties(WindowParam.prototype, {
 })
 
 /**
- * Checker for {@link chroma/complexTypes.WindowParam}
+ * Checker for {@link module:chroma/complexTypes.WindowParam}
  *
  * @memberof module:chroma/complexTypes
  *
