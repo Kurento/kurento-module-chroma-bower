@@ -366,7 +366,7 @@ exports.WindowParam = WindowParam;
  */
 
 Object.defineProperty(exports, 'name',    {value: 'chroma'});
-Object.defineProperty(exports, 'version', {value: '6.5.1-dev'});
+Object.defineProperty(exports, 'version', {value: '6.6.0'});
 
 
 var ChromaFilter = require('./ChromaFilter');
