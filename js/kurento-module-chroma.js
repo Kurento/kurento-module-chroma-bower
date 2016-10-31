@@ -78,7 +78,9 @@ ChromaFilter.prototype.setBackground = function(uri, callback){
                   ? Array.prototype.shift.apply(arguments)
                   : undefined;
 
-  checkType('String', 'uri', uri, {required: true});
+  //  
+  // checkType('String', 'uri', uri, {required: true});
+  //  
 
   var params = {
     uri: uri
@@ -238,10 +240,15 @@ function WindowParam(windowParamDict){
   windowParamDict = windowParamDict || {}
 
   // Check windowParamDict has the required fields
-  checkType('int', 'windowParamDict.topRightCornerX', windowParamDict.topRightCornerX, {required: true});
-  checkType('int', 'windowParamDict.topRightCornerY', windowParamDict.topRightCornerY, {required: true});
-  checkType('int', 'windowParamDict.width', windowParamDict.width, {required: true});
-  checkType('int', 'windowParamDict.height', windowParamDict.height, {required: true});
+  // 
+  // checkType('int', 'windowParamDict.topRightCornerX', windowParamDict.topRightCornerX, {required: true});
+  //  
+  // checkType('int', 'windowParamDict.topRightCornerY', windowParamDict.topRightCornerY, {required: true});
+  //  
+  // checkType('int', 'windowParamDict.width', windowParamDict.width, {required: true});
+  //  
+  // checkType('int', 'windowParamDict.height', windowParamDict.height, {required: true});
+  //  
 
   // Init parent class
   WindowParam.super_.call(this, windowParamDict)
